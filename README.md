@@ -1,3 +1,9 @@
+<div class="filament-hidden">
+
+![Filament Metrics Matomo](https://raw.githubusercontent.com/jeffersongoncalves/filament-metrics-matomo/2.x/art/jeffersongoncalves-filament-metrics-matomo.png)
+
+</div>
+
 # Filament Metrics Matomo
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/jeffersongoncalves/filament-metrics-matomo.svg?style=flat-square)](https://packagist.org/packages/jeffersongoncalves/filament-metrics-matomo)
