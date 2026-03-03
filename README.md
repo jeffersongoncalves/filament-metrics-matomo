@@ -1,10 +1,20 @@
 # Filament Metrics Matomo
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/jeffersongoncalves/filament-metrics-matomo.svg?style=flat-square)](https://packagist.org/packages/jeffersongoncalves/filament-metrics-matomo)
-[![Tests](https://github.com/jeffersongoncalves/filament-metrics-matomo/actions/workflows/run-tests.yml/badge.svg)](https://github.com/jeffersongoncalves/filament-metrics-matomo/actions/workflows/run-tests.yml)
+[![Tests](https://github.com/jeffersongoncalves/filament-metrics-matomo/actions/workflows/run-tests.yml/badge.svg?branch=1.x)](https://github.com/jeffersongoncalves/filament-metrics-matomo/actions/workflows/run-tests.yml)
 [![Total Downloads](https://img.shields.io/packagist/dt/jeffersongoncalves/filament-metrics-matomo.svg?style=flat-square)](https://packagist.org/packages/jeffersongoncalves/filament-metrics-matomo)
 
-A Filament v3 plugin that provides a Settings Page and Dashboard Widgets for [Matomo Analytics](https://matomo.org/), powered by [`jeffersongoncalves/laravel-metrics-matomo`](https://github.com/jeffersongoncalves/laravel-metrics-matomo).
+A Filament plugin that provides a Settings Page and Dashboard Widgets for [Matomo Analytics](https://matomo.org/), powered by [`jeffersongoncalves/laravel-metrics-matomo`](https://github.com/jeffersongoncalves/laravel-metrics-matomo).
+
+## Version Compatibility
+
+| Branch | Filament | Laravel | PHP | Livewire |
+|--------|----------|---------|-----|----------|
+| [1.x](https://github.com/jeffersongoncalves/filament-metrics-matomo/tree/1.x) | 3.x | 10+ | 8.1+ | 3.x |
+| [2.x](https://github.com/jeffersongoncalves/filament-metrics-matomo/tree/2.x) | 4.x | 11+ | 8.2+ | 3.x |
+| [3.x](https://github.com/jeffersongoncalves/filament-metrics-matomo/tree/3.x) | 5.x | 11+ | 8.2+ | 4.x |
+
+> You are currently viewing the **1.x** branch (Filament v3).
 
 ## Features
 
@@ -20,17 +30,10 @@ A Filament v3 plugin that provides a Settings Page and Dashboard Widgets for [Ma
 - **Caching** - Configurable TTL and cache store
 - **Translations** - English and Brazilian Portuguese (pt_BR) included
 
-## Requirements
-
-- PHP 8.1+
-- Laravel 10+
-- Filament 3.x
-- [`jeffersongoncalves/laravel-metrics-matomo`](https://github.com/jeffersongoncalves/laravel-metrics-matomo) ^1.0
-
 ## Installation
 
 ```bash
-composer require jeffersongoncalves/filament-metrics-matomo
+composer require jeffersongoncalves/filament-metrics-matomo:"^1.0"
 ```
 
 Make sure you have run the base package migrations:
@@ -118,7 +121,7 @@ composer test
 ## Code Quality
 
 ```bash
-composer analyse   # PHPStan level 8
+composer analyse   # PHPStan
 composer format    # Laravel Pint
 ```
 
