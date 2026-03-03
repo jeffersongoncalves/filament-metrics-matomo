@@ -5,10 +5,12 @@ namespace JeffersonGoncalves\FilamentMetricsMatomo\Tests;
 use BladeUI\Heroicons\BladeHeroiconsServiceProvider;
 use BladeUI\Icons\BladeIconsServiceProvider;
 use Filament\Actions\ActionsServiceProvider;
+use Filament\Facades\Filament;
 use Filament\FilamentServiceProvider;
 use Filament\Forms\FormsServiceProvider;
 use Filament\Infolists\InfolistsServiceProvider;
 use Filament\Notifications\NotificationsServiceProvider;
+use Filament\Schemas\SchemasServiceProvider;
 use Filament\SpatieLaravelSettingsPluginServiceProvider;
 use Filament\Support\SupportServiceProvider;
 use Filament\Tables\TablesServiceProvider;
@@ -32,6 +34,20 @@ abstract class TestCase extends Orchestra
         $this->createUsersTable();
         $this->createSettingsTable();
         $this->seedSettings();
+
+        // Filament v4's SupportServiceProvider overrides Livewire's DataStore
+        // with DataStoreOverride using bind() instead of singleton(), causing
+        // a new instance (with its own WeakMap) on every resolve. This breaks
+        // getErrorBag() which stores/retrieves across different WeakMap instances.
+        // Fix: resolve once and re-register as a singleton instance.
+        $dataStore = app(\Livewire\Mechanisms\DataStore::class);
+        app()->instance(\Livewire\Mechanisms\DataStore::class, $dataStore);
+
+        Filament::setCurrentPanel(
+            Filament::getDefaultPanel(),
+        );
+
+        $this->withoutVite();
     }
 
     /**
@@ -47,6 +63,7 @@ abstract class TestCase extends Orchestra
             SupportServiceProvider::class,
             FilamentServiceProvider::class,
             FormsServiceProvider::class,
+            SchemasServiceProvider::class,
             TablesServiceProvider::class,
             ActionsServiceProvider::class,
             InfolistsServiceProvider::class,

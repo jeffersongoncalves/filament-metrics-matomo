@@ -11,7 +11,7 @@ class MatomoReferrersWidget extends ChartWidget
     use HasMatomoClient;
     use HasPeriodFilter;
 
-    protected static ?string $heading = null;
+    protected ?string $heading = null;
 
     protected static ?int $sort = 2;
 
