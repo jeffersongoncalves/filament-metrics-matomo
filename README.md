@@ -7,8 +7,8 @@
 # Filament Metrics Matomo
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/jeffersongoncalves/filament-metrics-matomo.svg?style=flat-square)](https://packagist.org/packages/jeffersongoncalves/filament-metrics-matomo)
-[![Tests](https://github.com/jeffersongoncalves/filament-metrics-matomo/actions/workflows/run-tests.yml/badge.svg?branch=2.x)](https://github.com/jeffersongoncalves/filament-metrics-matomo/actions/workflows/run-tests.yml)
 [![Total Downloads](https://img.shields.io/packagist/dt/jeffersongoncalves/filament-metrics-matomo.svg?style=flat-square)](https://packagist.org/packages/jeffersongoncalves/filament-metrics-matomo)
+[![License](https://img.shields.io/packagist/l/jeffersongoncalves/filament-metrics-matomo.svg?style=flat-square)](LICENSE.md)
 
 A Filament plugin that provides a Settings Page and Dashboard Widgets for [Matomo Analytics](https://matomo.org/), powered by [`jeffersongoncalves/laravel-metrics-matomo`](https://github.com/jeffersongoncalves/laravel-metrics-matomo).
 
@@ -37,6 +37,8 @@ A Filament plugin that provides a Settings Page and Dashboard Widgets for [Matom
 - **Translations** - English and Brazilian Portuguese (pt_BR) included
 
 ## Installation
+
+You can install the package via composer:
 
 ```bash
 composer require jeffersongoncalves/filament-metrics-matomo:"^2.0"
