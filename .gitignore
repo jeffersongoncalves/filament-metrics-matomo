@@ -6,3 +6,5 @@
 composer.lock
 phpstan.neon
 .claude/
+
+.claude/settings.local.json
