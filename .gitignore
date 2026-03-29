@@ -5,3 +5,5 @@
 .php-cs-fixer.cache
 composer.lock
 phpstan.neon
+
+.claude/settings.local.json
