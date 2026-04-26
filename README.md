@@ -1,6 +1,6 @@
 <div class="filament-hidden">
 
-![Filament Metrics Matomo](https://raw.githubusercontent.com/jeffersongoncalves/filament-metrics-matomo/3.x/art/jeffersongoncalves-filament-metrics-matomo.jpg)
+![Filament Metrics Matomo](https://raw.githubusercontent.com/jeffersongoncalves/filament-metrics-matomo/3.x/art/jeffersongoncalves-filament-metrics-matomo.png)
 
 </div>
 
