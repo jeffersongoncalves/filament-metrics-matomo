@@ -2,8 +2,8 @@
 
 namespace JeffersonGoncalves\FilamentMetricsMatomo;
 
-use Filament\Contracts\Plugin;
 use Filament\Panel;
+use JeffersonGoncalves\FilamentAnalyticsCore\AbstractAnalyticsPlugin;
 use JeffersonGoncalves\FilamentMetricsMatomo\Pages\MatomoSettingsPage;
 use JeffersonGoncalves\FilamentMetricsMatomo\Widgets\MatomoBrowsersWidget;
 use JeffersonGoncalves\FilamentMetricsMatomo\Widgets\MatomoCountriesWidget;
@@ -14,7 +14,7 @@ use JeffersonGoncalves\FilamentMetricsMatomo\Widgets\MatomoTopPagesWidget;
 use JeffersonGoncalves\FilamentMetricsMatomo\Widgets\MatomoVisitsChartWidget;
 use JeffersonGoncalves\FilamentMetricsMatomo\Widgets\MatomoVisitsSummaryWidget;
 
-class FilamentMetricsMatomoPlugin implements Plugin
+class FilamentMetricsMatomoPlugin extends AbstractAnalyticsPlugin
 {
     protected bool $hasSettingsPage = false;
 
@@ -39,26 +39,14 @@ class FilamentMetricsMatomoPlugin implements Plugin
         return 'filament-metrics-matomo';
     }
 
-    public static function make(): static
+    protected function getSettingsPageClass(): ?string
     {
-        return app(static::class);
-    }
-
-    public static function get(): static
-    {
-        /** @var static $plugin */
-        $plugin = filament(app(static::class)->getId());
-
-        return $plugin;
+        return MatomoSettingsPage::class;
     }
 
     public function register(Panel $panel): void
     {
-        if ($this->hasSettingsPage) {
-            $panel->pages([
-                MatomoSettingsPage::class,
-            ]);
-        }
+        parent::register($panel);
 
         $widgets = [];
 
@@ -97,18 +85,6 @@ class FilamentMetricsMatomoPlugin implements Plugin
         if ($widgets !== []) {
             $panel->widgets($widgets);
         }
-    }
-
-    public function boot(Panel $panel): void
-    {
-        //
-    }
-
-    public function settingsPage(bool $condition = true): static
-    {
-        $this->hasSettingsPage = $condition;
-
-        return $this;
     }
 
     public function liveCounter(bool $condition = true): static
