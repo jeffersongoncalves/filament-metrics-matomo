@@ -2,6 +2,20 @@
 
 All notable changes to `filament-metrics-matomo` will be documented in this file.
 
+## 1.2.0 - 2026-09-23
+
+### Changed
+
+- **Built on `filament-analytics-core`:** the plugin now extends `AbstractAnalyticsPlugin` and depends on `jeffersongoncalves/filament-analytics-core` (matching major), like the other analytics plugins. `filament/spatie-laravel-settings-plugin` now comes in through that package. The plugin id, the `settingsPage()` API and the defaults are unchanged.
+- On the 1.x branch of filament-cookie-consent and filament-metrics-matomo, the PHP requirement is now `^8.2`, which analytics-core already required.
+
+### What's Changed
+
+* ci: standardize tests workflow (1.x) by @jeffersongoncalves in https://github.com/jeffersongoncalves/filament-metrics-matomo/pull/22
+* refactor: build on filament-analytics-core (1.x) by @jeffersongoncalves in https://github.com/jeffersongoncalves/filament-metrics-matomo/pull/25
+
+**Full Changelog**: https://github.com/jeffersongoncalves/filament-metrics-matomo/compare/1.1.0...1.2.0
+
 ## 1.1.0 - 2026-09-23
 
 ### What's new
