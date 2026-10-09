@@ -10,6 +10,7 @@ use Filament\Forms\Form;
 use Filament\Notifications\Notification;
 use Filament\Pages\SettingsPage;
 use Illuminate\Support\Facades\Cache;
+use JeffersonGoncalves\FilamentAnalyticsCore\AbstractAnalyticsPlugin;
 use JeffersonGoncalves\MetricsMatomo\Matomo;
 use JeffersonGoncalves\MetricsMatomo\MatomoClient;
 use JeffersonGoncalves\MetricsMatomo\Settings\MatomoSettings;
@@ -22,7 +23,7 @@ class MatomoSettingsPage extends SettingsPage
 
     public static function getNavigationGroup(): ?string
     {
-        return config('filament-metrics-matomo.navigation.group', 'Analytics');
+        return AbstractAnalyticsPlugin::navigationGroupFor('filament-metrics-matomo') ?? config('filament-metrics-matomo.navigation.group', 'Analytics');
     }
 
     public static function getNavigationSort(): ?int
