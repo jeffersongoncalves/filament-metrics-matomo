@@ -122,6 +122,15 @@ return [
 ];
 ```
 
+### Navigation group
+
+Put the settings page in one of your panel's own navigation groups (a string or a closure):
+
+```php
+FilamentMetricsMatomoPlugin::make()
+    ->navigationGroup(fn (): string => __('admin.navigation.settings')),
+```
+
 ## Testing
 
 ```bash
